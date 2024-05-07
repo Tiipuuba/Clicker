@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Lahjaklik</title>
+</head>
+<body>
+  <div class="main">
+    <div class="left">
+      <div class="container">
+        <p>Lahjat: <span class="gifts">0</span></p>
+        <div class="info">
+          <p title="Lahjoja sekunnissa||Lahjoja painalluksella">LPS: <span id="lps">0</span> LPC: <span id="lpc">0</span></p>
+        </div>
+        <img src="./assets/gift.png"
+        alt=""
+        onclick="incrementGift()"
+        class="gift-image"
+        draggable="false">
+      </div>
+    </div>
+    <div class="right">
+      <div class="upgrades-container">
+        <!-- Apukädet -->
+        <div class="upgrade" onclick="buyHands()" title="Jokaisesta on apua!">
+          <img src="./assets/helping_hands.png"
+          alt=""
+          class="upgrade-img">
+          <div class="tiedot">
+            <p class="nimi">Apukädet</p>
+            <p class="taso">Käsiä: <span id="taso-hand">0</span></p>
+          </div>
+          <p class="hinta">Hinta: <span id="hinta-hand">25</span></p>
+        </div>
+        <!-- Puutarhatonttu -->
+        <div class="upgrade" onclick="buyPuuTonttu()" title="Avuliaita viherpeukaloita">
+          <img src="./assets/puutarhatonttu.png"
+          alt=""
+          class="upgrade-img">
+          <div class="tiedot">
+            <p class="nimi">Puutarhatonttu</p>
+            <p class="taso">Tonttuja: <span id="taso-ptonttu">0</span></p>
+          </div>
+          <p class="hinta">Hinta: <span id="hinta-ptonttu">150</span></p>
+        </div>
+        <!-- Joulutonttu -->
+        <div class="upgrade" onclick="buyJTonttu()" title="Nyt nätisti! Tontut kurkkii ikkunoista..">
+          <img src="./assets/joulutonttu.png"
+          alt=""
+          class="upgrade-img">
+          <div class="tiedot">
+            <p class="nimi">Joulutonttu</p>
+            <p class="taso">Tonttuja: <span id="taso-jtonttu">0</span></p>
+          </div>
+          <p class="hinta">Hinta: <span id="hinta-jtonttu">500</span></p>
+        </div>
+        <!-- Kotitonttu -->
+        <div class="upgrade" onclick="buyKTonttu()" title="Mi casa es su casa">
+          <img src="./assets/kotitonttu.png"
+          alt=""
+          class="upgrade-img">
+          <div class="tiedot">
+            <p class="nimi">Kotitonttu</p>
+            <p class="taso">Tonttuja: <span id="taso-ktonttu">0</span></p>
+          </div>
+          <p class="hinta">Hinta: <span id="hinta-ktonttu">3500</span></p>
+        </div>
+        <!-- Saunatonttu -->
+        <div class="upgrade" onclick="buySTonttu()" title="Rento kaveri. Pitää rauhallisista kanssa saunojista.">
+          <img src="./assets/saunatonttu.png"
+          alt=""
+          class="upgrade-img">
+          <div class="tiedot">
+            <p class="nimi">Saunatonttu</p>
+            <p class="taso">Tonttuja: <span id="taso-stonttu">0</span></p>
+          </div>
+          <p class="hinta">Hinta: <span id="hinta-stonttu">10000</span></p>
+        </div>
+        <!-- Myllytonttu -->
+        <div class="upgrade" onclick="buyMTonttu()" title="Muista ruokkia!">
+          <img src="./assets/myllytonttu.png"
+          alt=""
+          class="upgrade-img">
+          <div class="tiedot">
+            <p class="nimi">Myllytonttu</p>
+            <p class="taso">Tonttuja: <span id="taso-mtonttu">0</span></p>
+          </div>
+          <p class="hinta">Hinta: <span id="hinta-mtonttu">25000</span></p>
+        </div>
+        <!-- Riihitonttu -->
+        <div class="upgrade" onclick="buyRTonttu()" title="Piippua poltteleva avulias kaveri.">
+          <img src="./assets/riihitonttu.png"
+          alt=""
+          class="upgrade-img">
+          <div class="tiedot">
+            <p class="nimi">Riihitonttu</p>
+            <p class="taso">Tonttuja: <span id="taso-rtonttu">0</span></p>
+          </div>
+          <p class="hinta">Hinta: <span id="hinta-rtonttu">135000</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Tehosteet -->
+  <div class="maink">
+    <!-- Sormikkaat -->
+    <div class="upgrade" id="sormi" onclick="buySormikkaat()" title="Lämpimät ja käytännölliset">
+      <img src="./assets/skills/Sormikkaat.png"
+      alt=""
+      class="upgrade-img">
+      <div class="tiedot">
+        <p class="nimi">Sormikkaat</p>
+        <p class="taso">2x käsin (aina)</p>
+      </div>
+      <p class="hinta">2500</p>
+    </div>
+    <!-- Karkki -->
+    <div class="upgrade" id="kark" onclick="buyKarkki()" title="Mitä pidempää odotat, sitä parempaa se on!">
+      <img src="./assets/skills/karkki.png"
+      alt=""
+      class="upgrade-img">
+      <div class="tiedot">
+        <p class="nimi">Karkki</p>
+        <p class="taso">2x tuotanto (nyky)</p>
+      </div>
+      <p class="hinta">5000</p>
+    </div>
+    <!-- Puuro -->
+    <div class="upgrade" id="puur" onclick="buyPuuro()" title="Paras aamupala!">
+      <img src="./assets/skills/puuro.png"
+      alt=""
+      class="upgrade-img">
+      <div class="tiedot">
+        <p class="nimi">Puuro</p>
+        <p class="taso">2x tuotanto (aina)</p>
+      </div>
+      <p class="hinta">33333</p>
+    </div>
+    <!-- Aavan puuro -->
+    <div class="upgrade" id="apuur" onclick="buyAPuuro()" title="Mahtava sekoitus lisukkeita!">
+      <img src="./assets/skills/aavan_puuro.png"
+      alt=""
+      class="upgrade-img">
+      <div class="tiedot">
+        <p class="nimi">Aavan puuro</p>
+        <p class="taso">8x tuotanto (aina)</p>
+      </div>
+      <p class="hinta">250000</p>
+    </div>
+  </div>
+  <script type="module" src="index.js"></script>
+</body>
+</html>
